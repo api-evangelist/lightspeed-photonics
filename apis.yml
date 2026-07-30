@@ -1,20 +1,58 @@
 aid: lightspeed-photonics
 name: Lightspeed Photonics
-description: Lightspeed Photonics is a company surfaced as a portfolio company of 500-global and added
-  to the API Evangelist network as a stub for enrichment. This profile is a lead awaiting the enrichment
-  pipeline.
+description: LightSpeed Photonics is a silicon-photonics and optoelectronics hardware company whose
+  public site is built around optical interconnect for computing, with the tagline "Bringing Light to
+  the Computing World." It publishes a LightKonnect product line (LightKonnect and LightKonnect Fiber),
+  a LightSIP technology page, and patents and publications sections, alongside company pages for its
+  team, investors, memberships and careers, plus an Insights area carrying blog, news, events and
+  technology posts. It was surfaced as a portfolio company of 500 Global. As of the 2026-07-19
+  enrichment pass the company publishes no public API, developer portal, documentation, SDK, or
+  machine-readable specification of any kind - it is a semiconductor and optical hardware vendor
+  rather than an API provider.
 url: https://raw.githubusercontent.com/api-evangelist/lightspeed-photonics/refs/heads/main/apis.yml
+accessModel:
+  pricing: unknown
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Unknown
+  confidence: low
+  source: []
+  generated: '2026-07-22'
+  method: derived
+image: https://lightspeedphotonics.com/square.png
 x-type: company
 x-source: vc-portfolio
 x-backed-by:
 - 500-global
 x-tier: stub
-x-tier-reason: portfolio-lead
+x-tier-reason: hardware-vendor-no-api-surface
+x-enrichment:
+  last_run: '2026-07-19'
+  outcome: no-api-surface
+  # Evidence gathered 2026-07-19 so future rounds do not repeat the work:
+  #  - No GitHub organization: github.com/{lightspeed-photonics,lightspeedphotonics,LightSpeedPhotonics} all 404
+  #  - No docs./api./developer./developers./status./trust. subdomains resolve (NXDOMAIN)
+  #  - Site is a React SPA with a catch-all rewrite: all unknown paths return HTTP 200
+  #    with the index.html shell, so /.well-known/*, /llms.txt and /openapi.json are SOFT 404s
+  #    (body-verified - see well-known/lightspeed-photonics-well-known.yml)
+  #  - No vulnerability disclosure program and no trust center (probe-security-programs.py)
+  # Artifacts intentionally NOT created (nothing real to capture, no OpenAPI to derive from):
+  #  packages, mcp, llms, overlays, grpc, conformance, errors, lifecycle, scopes,
+  #  authentication, sandbox, conventions, changelog, cli, components, data-model,
+  #  decline-codes, asyncapi, skills, openapi
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-19'
 tags:
 - Company
+- Photonics
+- Optoelectronics
+- Semiconductors
+- Optical Interconnect
+- Co-Packaged Optics
+- Hardware
 apis: []
 maintainers:
 - FN: Kin Lane
@@ -24,3 +62,25 @@ maintainers:
 common:
 - type: Website
   url: https://lightspeedphotonics.com
+- type: About
+  url: https://lightspeedphotonics.com/company/about
+- type: Blog
+  url: https://lightspeedphotonics.com/Insights/Blog
+- type: News
+  url: https://lightspeedphotonics.com/Insights/news
+- type: PrivacyPolicy
+  url: https://lightspeedphotonics.com/privacypolicy
+- type: Contact
+  url: https://lightspeedphotonics.com/contact
+- type: Careers
+  url: https://lightspeedphotonics.com/company/careers
+- type: Team
+  url: https://lightspeedphotonics.com/company/team
+- type: Investors
+  url: https://lightspeedphotonics.com/company/investors
+- type: Publications
+  url: https://lightspeedphotonics.com/Technology/Publications
+- type: Patents
+  url: https://lightspeedphotonics.com/Technology/Patents
+- type: DomainSecurity
+  url: security/lightspeed-photonics-domain-security.yml
