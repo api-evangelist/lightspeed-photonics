@@ -1,0 +1,59 @@
+generated: '2026-07-19'
+method: searched
+source: https://lightspeedphotonics.com
+host: https://lightspeedphotonics.com
+# NOTE FOR FUTURE RUNS: lightspeedphotonics.com is a client-side React SPA served
+# with a catch-all rewrite. EVERY unknown path returns HTTP 200 with the index.html
+# shell (`<div id="root">`), including /.well-known/*, /llms.txt, /robots.txt,
+# /sitemap.xml and /openapi.json. The 200 status is a SOFT 404 and must NOT be read
+# as "document published". Each entry below was body-verified: `published: false`
+# means the response body was the SPA shell, not the document.
+# Only /manifest.json returned a real document (the PWA manifest, not a discovery doc).
+soft_404_catch_all: true
+documents:
+- path: /.well-known/security.txt
+  status: 200
+  published: false
+  note: SPA shell returned, not RFC 9116 content
+- path: /.well-known/openid-configuration
+  status: 200
+  published: false
+  note: SPA shell returned, not OIDC discovery JSON
+- path: /.well-known/oauth-authorization-server
+  status: 200
+  published: false
+  note: SPA shell returned, not RFC 8414 metadata
+- path: /.well-known/api-catalog
+  status: 200
+  published: false
+  note: SPA shell returned, not RFC 9727 catalog
+- path: /.well-known/ai-plugin.json
+  status: 200
+  published: false
+  note: SPA shell returned, not a plugin manifest
+- path: /llms.txt
+  status: 200
+  published: false
+  note: SPA shell returned, no llms.txt published
+- path: /robots.txt
+  status: 200
+  published: false
+  note: SPA shell returned, no robots.txt published
+- path: /sitemap.xml
+  status: 200
+  published: false
+  note: SPA shell returned, no sitemap published
+- path: /openapi.json
+  status: 200
+  published: false
+  note: SPA shell returned, no OpenAPI published
+- path: /manifest.json
+  status: 200
+  published: true
+  note: real PWA web app manifest (short_name LSP); not an API discovery document
+findings:
+  security_txt: none
+  openid_configuration: none
+  oauth_authorization_server: none
+  api_catalog: none
+  llms_txt: none
