@@ -42,7 +42,7 @@ x-enrichment:
   #  packages, mcp, llms, overlays, grpc, conformance, errors, lifecycle, scopes,
   #  authentication, sandbox, conventions, changelog, cli, components, data-model,
   #  decline-codes, asyncapi, skills, openapi
-specificationVersion: '0.20'
+specificationVersion: '0.23'
 created: '2026-07-17'
 modified: '2026-07-19'
 tags:
